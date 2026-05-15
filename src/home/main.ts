@@ -20,6 +20,10 @@ import * as canvas from '../canvas';
 // Filepath to JSON data file
 const jsonUrl: string = "data/av-data.json";
 
+// Play button text
+const btnPlayTrue = "Pause";
+const btnPlayFalse = "Play";
+
 // Object containing all user parameters set from the UI
 const drawParams: canvas.DrawParams = {
     showGradient: true,
@@ -53,10 +57,12 @@ const init = (): void =>
             audio.setupWebaudio(defaultTrackPath);
 
             let canvasElement = document.querySelector("canvas"); // hookup <canvas> element
-            canvas.setupCanvas(canvasElement, audio.analyserNode);
-            setupUI(canvasElement);
-
-            loop();
+            if (canvasElement) {
+                canvas.setupCanvas(canvasElement, audio.analyserNode);
+                setupUI(canvasElement);
+    
+                loop();
+            }
         })
         .catch((error: Error) =>
         {
@@ -99,7 +105,9 @@ const parseJson = async (json: utils.JsonDataFormat): Promise<void> =>
             }
 
             // Add to list in DOM
-            trackSelect.appendChild(newTrack);
+            if (trackSelect) {
+                trackSelect.appendChild(newTrack);
+            }
         }
 
         // Freeze list of defaults
@@ -151,13 +159,18 @@ const setupUI = (canvasElement: HTMLCanvasElement): void =>
             target.dataset.playing = "no";    // our CSS will set the text to "Play"
             isPlaying = false;
         }
+        setTextFromBool(target, isPlaying, btnPlayTrue, btnPlayFalse);
     };
+
+    setTextFromBool(playButton, isPlaying, btnPlayTrue, btnPlayFalse);
 
     // Attach function that resets play button via event handler 
     audio.setSoundEndBehavior((e: Event) =>
     {
         playButton.dataset.playing = "no";
         isPlaying = false;
+
+        setTextFromBool(playButton, isPlaying, btnPlayTrue, btnPlayFalse);
     });
 
 
@@ -333,6 +346,15 @@ const loop = (): void =>
     setTimeout(loop, 1000 / defaults["fps"]);
 
     canvas.draw(drawParams, isPlaying);
+}
+
+const setTextFromBool = (
+    element : HTMLElement,
+    val : boolean,
+    strTrue : string,
+    strFalse : string
+): void => {
+    element.innerText = val ? strTrue : strFalse;
 }
 
 export { init };
