@@ -244,8 +244,8 @@ const setHorizon = (percentage: number) =>
     // create a gradient that runs top to bottom
     gradient = utils.getLinearGradient(ctx, 0, 0, 0, canvasHeight, [
         { percent: 0, color: "rgb(0, 0, 0)" },
-        { percent: horizon / 2, color: "rgb(0, 0, 30)" },
-        { percent: horizon - 0.02, color: "rgb(20, 0, 40)" },
+        { percent: horizon / 2, color: "rgb(0, 0, 65)" },
+        { percent: horizon - 0.02, color: "rgb(54, 0, 107)" },
         { percent: horizon, color: "rgb(0, 0, 0)" },
         { percent: 1, color: "rgb(60, 100, 60)" },
     ]);
