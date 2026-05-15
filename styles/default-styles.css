@@ -7,6 +7,15 @@ button#btn-play {
     width: 100px;
 }
 
+button[data-playing="yes"]:after {
+    
+    content: "Pause";
+}
+
+button[data-playing="no"]:after {
+    content: "Play";
+}
+
 .eq-label, .vis-label {
     width: 500px;
 }
@@ -15,8 +24,6 @@ button#btn-play {
 .columns.justify-content {
     justify-content: space-around;
 }
-
-
 
 /* Reverse high pass slider so its coloration
 represents the range of frequencies heard */
