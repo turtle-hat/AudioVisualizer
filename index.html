@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-black">
+
+<head>
+    <meta charset="utf-8">
+    <title id="page-title">Audio Visualizer</title>
+    <!-- <link href="./styles/default-styles.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="./styles/default-styles.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar has-background-dark has-text-light is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <span class="icon has-text-light">
+                    <i class="fas fa-star is-large"></i>
+                </span>
+                <h1 id="page-header" class="title has-text-light">Title Pending...</h1>
+            </a>
+
+            <a class="navbar-burger has-text-light" id="burger">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu has-background-dark has-text-light" id="nav-links">
+            <div class="navbar-end">
+                <a class="navbar-item is-hoverable has-text-light" href="index.html">
+                    Visualizer
+                </a>
+                <a class="navbar-item is-hoverable has-text-light" href="about.html">
+                    About
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="columns">
+        <div class="column hero">
+            <canvas class="mt-4" width="960" height="480"></canvas>
+        </div>
+        <div id="controls" class="column section">
+            <div class="box buttons has-background-dark has-text-light is-centered">
+                <button class="button is-normal" id="btn-play" data-playing="no"></button>
+                <button class="button is-normal" id="btn-fs">Full Screen</button>
+            </div>
+
+            <section class="box columns has-background-dark has-text-light is-mobile m-0 mb-5">
+                <div class="column">
+                    <label>Track:
+                        <select id="track-select"></select>
+                    </label>
+                </div>
+
+                <div class="column">
+                    <label for="volume-slider">Volume: </label><span id="volume-label">???</span><br>
+                    <input type="range" id="volume-slider" min="0" max="2" value="1" step="0.01">
+                </div>
+            </section>
+
+            <section class="box breadcrumb has-bullet-separator has-background-dark has-text-light">
+                <ul>
+                    <li class="mr-1"><input type="checkbox" class="ml-1 mr-1" id="cb-gradient"><label for="cb-gradient">
+                            Show Gradient</label></li>
+                    <li class="mr-1"><input type="checkbox" class="ml-1 mr-1" id="cb-bars"><label for="cb-bars"> Show
+                            Bars</label></li>
+                    <li class="mr-1"><input type="checkbox" class="ml-1 mr-1" id="cb-stars"><label for="cb-stars"> Show
+                            Stars</label></li>
+                    <li class="mr-1"><input type="checkbox" class="ml-1 mr-1" id="cb-noise"><label for="cb-noise"> Show
+                            Noise</label></li>
+                    <li class="mr-1"><input type="checkbox" class="ml-1 mr-1" id="cb-invert"><label for="cb-invert">
+                            Invert</label></li>
+                </ul>
+            </section>
+
+            <section class="box has-background-dark has-text-light">
+                <input type="radio" id="radio-mode-freq" name="radio-mode"><label for="radio-mode-freq">
+                    Frequency</label>
+                <input type="radio" id="radio-mode-wave" name="radio-mode"><label for="radio-mode-wave">
+                    Waveform</label>
+            </section>
+
+            <div class="box has-background-dark has-text-light">
+                <section id="visualization" class="columns is-mobile">
+                    <div class="column">
+                        <label class="vis-label" for="horizon-slider">Horizon Height: <span
+                                id="horizon-label">???</span></label><br>
+                        <input type="range" id="horizon-slider" class="vis-slider" min="10" max="90" value="30"
+                            step="1">
+                    </div>
+                    <div class="column">
+                        <label class="vis-label" for="radius-slider">Star Radius: <span
+                                id="radius-label">???</span></label><br>
+                        <input type="range" id="radius-slider" class="vis-slider" min="500" max="2000" value="1000"
+                            step="10">
+                    </div>
+                </section>
+
+                <section id="eq" class="columns is-mobile">
+                    <div class="column">
+                        <label class="eq-label" for="highpass-slider">Bass Cutoff: <span
+                                id="highpass-label">???</span></label><br>
+                        <input type="range" id="highpass-slider" class="eq-slider" min="0" max="20000" value="20000"
+                            step="100">
+                    </div>
+                    <div class="column">
+                        <label class="eq-label" for="lowpass-slider">Treble Cutoff: <span
+                                id="lowpass-label">???</span></label><br>
+                        <input type="range" id="lowpass-slider" class="eq-slider" min="0" max="20000" value="20000"
+                            step="100">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer has-background-dark has-text-light mt-6">
+        © Owen Gebhardt 2024
+    </footer>
+
+    <script src="./dist/home/bundle.js"></script>
+</body>
+
+</html>

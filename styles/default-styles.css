@@ -1,0 +1,27 @@
+canvas {
+    max-width: 100%;
+    width: 960px;
+}
+
+button#btn-play {
+    width: 100px;
+}
+
+button[data-playing="yes"]:after {
+    
+    content: "Pause";
+}
+
+button[data-playing="no"]:after {
+    content: "Play";
+}
+
+.eq-label, .vis-label {
+    width: 500px;
+}
+
+/* Reverse high pass slider so its coloration
+represents the range of frequencies heard */
+#highpass-slider {
+    direction: rtl;
+}

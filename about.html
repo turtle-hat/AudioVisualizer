@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-black">
+
+<head>
+    <meta charset="utf-8">
+    <title id="page-title">About</title>
+    <!-- <link href="./styles/default-styles.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="./styles/default-styles.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar has-background-dark has-text-light is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <span class="icon has-text-light">
+                    <i class="fas fa-star is-large"></i>
+                </span>
+                <h1 id="page-header" class="title has-text-light">Title Pending...</h1>
+            </a>
+
+            <a class="navbar-burger has-text-light" id="burger">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu has-background-dark has-text-light" id="nav-links">
+            <div class="navbar-end">
+                <a class="navbar-item is-hoverable has-text-light" href="index.html">
+                    Visualizer
+                </a>
+                <a class="navbar-item is-hoverable has-text-light" href="about.html">
+                    About
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="box m-4 is-dark has-background-dark has-text-light">
+        <div class="breadcrumb">
+            <ul>
+                <li>
+                    <a href="index.html" class="has-text-link-light">
+                        <i class="fas fa-home m-1"></i>
+                        <span> Return to Visualizer</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <h2 class="title has-text-light">About this app</h2>
+        <p class="mb-4">This audio visualizer was made as a project for my IGME-330: Rich Media Web Development
+            class with Professor John-Paul Takats in Fall 2024. It includes three songs and three test sounds.</p>
+        <p class="mb-4">It was meant to look like the night sky, which I think is pretty.</p>
+        <div class="columns is-3">
+            <div class="column"></div>
+            <div class="column">
+                <img src="media/sky.jpg" id="sky-image" class="image"
+                    alt="The night sky under long exposure, with a hint of an aurora">
+                <label><em>Photo taken by me</em></label>
+            </div>
+            <div class="column"></div>
+        </div>
+        <p class="mb-4">The program uses the Web Audio API to play the songs and analyze the sound data streaming
+            in, and renders a visualization to go along with the song using the Canvas API. I originally programmed
+            it in JavaScript, then ported it to TypeScript. The code is transpiled back into JavaScript with Babel
+            and packaged using Webpack.</p>
+        <p class="title is-3 has-text-light mb-4">Controls:</p>
+        <ul>
+            <li class="mb-4"><strong class="has-text-info-light">Play/Pause:</strong> Starts or stops the selected
+                song.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Full Screen:</strong> Puts the visualizer into
+                fullscreen.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Track:</strong> Changes the song/sound to be
+                played.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Volume:</strong> Adjusts the song/sound's playback
+                volume.</li>
+        </ul>
+        <br>
+        <ul>
+            <li class="mb-4"><strong class="has-text-info-light">Show Gradient:</strong> Toggles whether the
+                environment gradient is shown.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Show Bars:</strong> Toggles whether the bars
+                representing sound info are shown.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Show Stars:</strong> Toggles whether the orbiting
+                stars are shown.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Show Noise:</strong> Toggles whether visual noise
+                should be overlaid on the visualizer</li>
+            <li class="mb-4"><strong class="has-text-info-light">Show Invert:</strong> Toggles whether the
+                visualizer should be color-inverted.</li>
+        </ul>
+        <br>
+        <ul>
+            <li class="mb-4"><strong class="has-text-info-light">Frequency/Waveform:</strong> Toggles whether the
+                bars display the song/sound's frequency range at the current time or a representation of its
+                waveform.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Horizon Height:</strong> Adjusts how high the
+                visual horizon is on the screen.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Star Radius:</strong> Adjusts how wide the stars'
+                orbits are.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Bass Cutoff:</strong> Applies a high-pass filter,
+                lowering the volume of frequencies below the desired threshold.</li>
+            <li class="mb-4"><strong class="has-text-info-light">Treble Cutoff:</strong> Applies a low-pass filter,
+                lowering the volume of frequencies above the desired threshold.</li>
+        </ul>
+    </div>
+
+    <footer class="footer has-background-dark has-text-light mt-6">
+        © Owen Gebhardt 2024
+    </footer>
+
+    <script src="./dist/about/bundle.js"></script>
+</body>
+
+</html>

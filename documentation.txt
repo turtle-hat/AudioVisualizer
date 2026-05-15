@@ -1,0 +1,19 @@
+Owen Gebhardt
+11/22/24
+
+- Refactored code into TypeScript
+    - Added interfaces for settings object (drawing parameters), the JSON data loaded by the application, and a few others
+    - Made all variables, functions, and parameters strongly typed
+- Redid page styling with Bulma
+
+11/15/24
+
+- Refactored code into TypeScript
+    - Changed settings objects (drawing parameters)
+
+10/23/24
+
+- In the audio routing graph, I decided to include a simple Low Pass and High Pass filter.
+- My Sprite's class name is StarSprite, and renders a star that slowly rotates over the top part of the visualizer and pulses in time with a given frequency band.
+- Alongside the page's name and each track's name and file path, av-data.json contains default values for many of the app's settings. It also contains speed values for each song, which determine how fast the stars orbit.
+- I've improved the visuals by keeping the more subtle gradient I made in the PE and adding stars, and also removing the circles and emboss features, since I couldn't make better-looking alternatives before the deadline. I think I would grade myself a 10, since I did improve it substantially over the homework, but mostly just added what was required by the rubric, and didn't add much other new functionality.

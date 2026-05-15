@@ -1,0 +1,42 @@
+{
+    "title" : "Super Intergalactic Audio Visualizer",
+    "tracks-root" : "media",
+    "tracks" : [
+        {
+            "title" : "New Adventure Theme",
+            "filename" : "New Adventure Theme.mp3"
+        },
+        {
+            "title" : "Peanuts Theme",
+            "filename" : "Peanuts Theme.mp3"
+        },
+        {
+            "title" : "The Picard Song",
+            "filename" : "The Picard Song.mp3"
+        },
+        {
+            "title" : "Test - Slide",
+            "filename" : "slide.mp3"
+        },
+        {
+            "title" : "Test - White Noise",
+            "filename" : "whitenoise.mp3"
+        },
+        {
+            "title" : "Test - Pink Noise",
+            "filename" : "pinknoise.mp3"
+        }
+    ],
+    "defaults" : {
+        "checkboxes" : {
+            "show-gradient" : true,
+            "show-bars"     : true,
+            "show-stars"    : true,
+            "show-noise"    : false,
+            "show-invert"   : false
+        },
+        "fps" : 60,
+        "start-in-wave-mode" : false,
+        "track" : 0
+    }
+}
